@@ -1,0 +1,44 @@
+#wage-calculator {
+    position: relative;
+}
+
+input[type="number"], select {
+    width: 7em !important;
+}
+
+.form-group label {
+    justify-content: start !important;
+}
+
+div {
+    text-align: left;
+}
+
+.nowrap {
+    white-space: nowrap !important;
+}
+
+.form-group {
+    margin-bottom: 0 !important;
+}
+
+p {
+    margin-bottom: 0.5rem !important;
+}
+
+.highlight {
+    animation: 0.5s highlight 1 alternate;
+}
+
+@keyframes highlight {
+    from {
+        box-shadow: none;
+    }
+    to {
+        box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)
+    }
+}
+
+.cog-wheel-icon {
+    cursor: pointer;
+}

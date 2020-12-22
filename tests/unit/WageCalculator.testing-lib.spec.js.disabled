@@ -1,0 +1,54 @@
+import WageCalculator from '../../src/components/WageCalculator.vue';
+import {render} from '@testing-library/vue';
+//import {waitFor} from "@testing-library/dom";
+
+const {getByLabelText} = render(WageCalculator);
+
+const inputHourly = getByLabelText('Hourly:');
+const inputHoursPerDay = getByLabelText('Hours/Day:');
+const inputDaily = getByLabelText('Daily:');
+const inputWeekly = getByLabelText('Weekly:');
+const inputMonthly = getByLabelText('Monthly:');
+
+test('initial state', () => {
+
+    expect(inputHourly.value).toBe("0");
+    expect(inputHoursPerDay.value).toBe("8");
+    expect(inputDaily.value).toBe("0");
+    expect(inputWeekly.value).toBe("0");
+    expect(inputMonthly.value).toBe("0");
+
+});
+
+
+
+/*test('hourly set to 1', async () => {
+
+   let arrTests = [
+       {'hourly':'1', 'hoursday': '8', 'daily': '8', 'weekly': '40', 'monthly': '173.33'},
+       {'hourly':'2', 'hoursday': '8', 'daily': '16', 'weekly': '80', 'monthly': '173.33'},
+       {'hourly':'5', 'hoursday': '8', 'daily': '40', 'weekly': '200', 'monthly': '866,67'},
+       {'hourly':'7', 'hoursday': '8', 'daily': '56', 'weekly': '280', 'monthly': '866,67'},
+
+       ];
+
+
+
+    for(let i = 0; i < arrTests.length; i++)
+    {
+         let oTestVal = arrTests[i];
+
+        await fireEvent.update(inputHourly, oTestVal.hourly);
+        await fireEvent.change(inputHourly);
+        //debug();
+        //await waitFor(() => {}, {interval: 1000});
+        //await HourlyWage.vm.$nextTick();
+
+        expect(inputHourly.value).toBe(oTestVal.hourly);
+        expect(inputHoursPerDay.value).toBe(oTestVal.hoursday);
+        expect(inputDaily.value).toBe(oTestVal.daily);
+        expect(inputWeekly.value).toBe(oTestVal.weekly);
+        expect(inputMonthly.value).toBe(oTestVal.monthly);
+    }
+
+});*/
